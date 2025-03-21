@@ -1,4 +1,7 @@
 import './styles.css';
+import { createRoot } from 'react-dom/client';
+import App from './App';
+import React from 'react';
 
 console.log('Webpack is working!');
 
@@ -11,4 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     alert('Button clicked!');
   });
   app.appendChild(button);
+  const container = document.getElementById('appReact');
+  const root = createRoot(container);
+  root.render(<App />);
 });
