@@ -7,7 +7,6 @@ console.log('Webpack is working!');
 
 // You can add more JavaScript code here
 document.addEventListener('DOMContentLoaded', () => {
-  
   const app = document.getElementById('app');
   const button = document.createElement('button');
   button.textContent = 'Click me!';
@@ -19,5 +18,4 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = createRoot(container);
 
   root.render(React.createElement(App, null));
-
 });

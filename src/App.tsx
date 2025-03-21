@@ -7,9 +7,9 @@ const App = () => {
       <p>This is a JSX component</p>
       <img src="https://example.com/image.jpg" alt="Example" />
       <input type="text" />
-      <div 
-        onClick={() => console.log('clicked')} 
-        onKeyDown={(e) => {
+      <div
+        onClick={() => console.log('clicked')}
+        onKeyDown={e => {
           if (e.key === 'Enter' || e.key === ' ') {
             console.log('clicked');
           }
