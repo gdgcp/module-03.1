@@ -3,6 +3,7 @@ import globals from "globals";
 import js from "@eslint/js";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
+import jsxA11y from 'eslint-plugin-jsx-a11y';
 
 
 export default defineConfig([
@@ -11,6 +12,7 @@ export default defineConfig([
   { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"], plugins: { js }, extends: ["js/recommended"] },
   tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
+  jsxA11y.flatConfigs.recommended,
   {
     settings: {
       react: {
@@ -19,7 +21,9 @@ export default defineConfig([
     },
     rules: {
         "no-unused-vars": "warn",
-        "no-undef": "warn"        
+        "no-undef": "warn"        ,
+        'jsx-a11y/alt-text': 'error',
     }
-  }
+  },
+  
 ]);
