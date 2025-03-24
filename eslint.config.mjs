@@ -8,6 +8,7 @@ import eslintConfigPrettier from 'eslint-config-prettier';
 
 
 export default defineConfig([
+  { ignores: ["public/**", "build/**", "**/bundle.js", "webpack.config.js"] },
   { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
   { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"], languageOptions: { globals: globals.browser } },
   { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"], plugins: { js }, extends: ["js/recommended"] },

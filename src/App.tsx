@@ -5,7 +5,7 @@ const App = () => {
     <div className="app">
       <h1>Hello from React!</h1>
       <p>This is a JSX component</p>
-      <img src="https://example.com/image.jpg" alt="Example" />
+      <img src="https://picsum.photos/200/300" alt="Example" />
       <input type="text" />
       <div
         onClick={() => console.log('clicked')}

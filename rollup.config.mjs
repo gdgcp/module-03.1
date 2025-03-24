@@ -8,15 +8,19 @@ import babel from '@rollup/plugin-babel';
 export default {
 	input: 'src/index.ts',
 	output: {
-		file: './build/bundle.js',
+		dir: 'public',
 		format: 'iife',
-		sourcemap: true
+		sourcemap: true,
+		entryFileNames: 'bundle.js'
 	},
-	plugins: [
+	plugins: [		
 		resolve({
 			extensions: ['.js', '.jsx', '.ts', '.tsx']
 		}),
-        babel({ babelHelpers: 'bundled' }),
+        babel({ babelHelpers: 'bundled',
+            presets: ['@babel/preset-react'],
+         extensions: ['.js', '.jsx']
+         }),
 		commonjs(),
 		typescript({
 			tsconfig: './tsconfig.json',
@@ -27,9 +31,9 @@ export default {
 			extensions: ['.css']
 		}),
 		replace({
-			'process.env.NODE_ENV': JSON.stringify('production'),
-			preventAssignment: true
+			'process.env.NODE_ENV': JSON.stringify('development'),
+			preventAssignment: false
 		})
 	],
-	external: ['react', 'react-dom']
+	//external: ['react', 'react-dom']
 }
