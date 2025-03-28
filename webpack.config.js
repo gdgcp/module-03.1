@@ -1,7 +1,7 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-module.exports = {
+export default {
   mode: 'production',
   entry: './src/index.ts',
   output: {
@@ -24,26 +24,29 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(ts|tsx)$/, // New rule for TypeScript files
-        exclude: /node_modules/,
-        use: 'ts-loader',
-      },
-      {
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
             presets: [
-              ['@babel/preset-env', {
-                targets: {
-                  browsers: ['ie 10']
-                }
-              }],
-              '@babel/preset-react'
-            ]
+              [
+                '@babel/preset-env',
+                {
+                  targets: {
+                    browsers: ['ie 10'],
+                  },
+                },
+              ],
+              '@babel/preset-react',
+            ],
           },
         },
+      },
+      {
+        test: /\.(ts|tsx)$/, // New rule for TypeScript files
+        exclude: /node_modules/,
+        use: 'ts-loader',
       },
     ],
   },
